@@ -20,8 +20,8 @@ const HomeHeader = ({ onSearch }) => {
           source={assets.logo}
           resizeMode='contain'
           style={{
-            width: 90,
-            height: 25,
+            width: 45,
+            height: 45,
           }}
         />
         <View
@@ -68,7 +68,7 @@ const HomeHeader = ({ onSearch }) => {
             color: COLORS.white,
           }}
         >
-          Hello, Bob 👋
+          Oi, Bob 👋
         </Text>
         <Text
           style={{
@@ -78,7 +78,7 @@ const HomeHeader = ({ onSearch }) => {
             marginTop: SIZES.base / 2,
           }}
         >
-          Lets's find a project
+          Vamos encontrar um projeto!!
         </Text>
       </View>
       <View style={{ marginTop: SIZES.font }}>
@@ -103,7 +103,7 @@ const HomeHeader = ({ onSearch }) => {
             }}
           />
           <TextInput
-            placeholder='Search projects'
+            placeholder='Procurar projetos'
             style={{ flex: 1 }}
             onChangeText={onSearch}
           />

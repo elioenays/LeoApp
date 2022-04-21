@@ -100,7 +100,7 @@ export const EndDate = ({ data }) => {
           color: COLORS.primary,
         }}
       >
-        Ending in
+        Finaliza em
       </Text>
 
       <Text
