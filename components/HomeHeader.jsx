@@ -32,7 +32,7 @@ const HomeHeader = ({ onSearch }) => {
         >
           <Image
             source={assets.bob}
-            resizeMode='contain'
+            resizeMode='cover'
             style={{
               width: '100%',
               height: '100%',
