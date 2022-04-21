@@ -1,4 +1,5 @@
 import heart from '../assets/icons/heart.png';
+import left from '../assets/icons/left.png';
 import search from '../assets/icons/search.png';
 import bob from '../assets/images/bob.jpg';
 import dog from '../assets/images/dog.png';
@@ -20,4 +21,5 @@ export default {
   plancton,
   logo,
   search,
+  left,
 };

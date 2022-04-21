@@ -27,7 +27,7 @@ export const ProjectTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
   );
 };
 
-export const ProjectVacancy = ({ vagas }) => {
+export const ProjectVacancy = ({ vacancies }) => {
   return (
     <View
       style={{
@@ -42,7 +42,7 @@ export const ProjectVacancy = ({ vagas }) => {
           color: COLORS.primary,
         }}
       >
-        {vagas} Vagas Disponiveis
+        {vacancies} Vagas Disponiveis
       </Text>
     </View>
   );

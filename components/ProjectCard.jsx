@@ -54,7 +54,7 @@ const ProjectCard = ({ data }) => {
             alignItems: 'center',
           }}
         >
-          <ProjectVacancy vagas={data.vagas} />
+          <ProjectVacancy vacancies={data.vacancies} />
           <RectButton
             minWidth={120}
             fontSize={SIZES.font}
