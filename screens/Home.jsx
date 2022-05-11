@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import { FlatList, SafeAreaView, View } from 'react-native';
 import FocusedStatusBar from '../components/FocusedStatusBar';
 import HomeHeader from '../components/HomeHeader';
@@ -6,17 +6,34 @@ import ProjectCard from '../components/ProjectCard';
 import { COLORS, ProjectData } from '../constants';
 
 const Home = () => {
+
+  const [projectData, setProjectData] = useState(ProjectData);
+
+  const handleSearch = value => {
+    if (!value.length) return setProjectData(ProjectData);
+
+    const filteredData = ProjectData.filter(item =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+
+    if (filteredData.length) {
+      setProjectData(filteredData);
+    } else {
+      setProjectData(ProjectData);
+    }
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar background={COLORS.primary} />
       <View style={{ flex: 1 }}>
         <View style={{ zIndex: 0 }}>
           <FlatList
-            data={ProjectData}
+            data={projectData}
             renderItem={({ item }) => <ProjectCard data={item} />}
             keyExtractor={item => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader />}
+            ListHeaderComponent={<HomeHeader onSearch={handleSearch}/>}
           />
         </View>
         <View

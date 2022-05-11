@@ -32,12 +32,11 @@ const HomeHeader = ({ onSearch }) => {
         >
           <Image
             source={assets.bob}
-            resizeMode='cover'
+            // resizeMode='cover'
             style={{
               width: '100%',
               height: '100%',
-              borderRadius: 100,
-              overflow: 'hidden',
+              // overflow: 'hidden',
               borderRadius: 100,
               borderColor: '#fff',
               borderWidth: 1,
