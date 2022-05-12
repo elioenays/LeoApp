@@ -67,7 +67,7 @@ const DetailsDesc = ({ data }) => {
                 }
               }}
             >
-              {readMore ? 'Show less' : 'Read More'}
+              {readMore ? 'Mostrar menos' : 'Ler mais'}
             </Text>
           </Text>
         </View>
