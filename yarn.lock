@@ -2585,10 +2585,10 @@ expo-updates-interface@~0.5.0:
   resolved "https://registry.npmjs.org/expo-updates-interface/-/expo-updates-interface-0.5.1.tgz"
   integrity sha512-RLvC69o1BkhHP6hNaWiIvSiTgXABB9v4HnoietoXKFHlAyxlQCupy6ki164KpZNrOS/PFJ2WWqZOvKfiyDVO+w==
 
-expo-updates@~0.11.6:
-  version "0.11.6"
-  resolved "https://registry.npmjs.org/expo-updates/-/expo-updates-0.11.6.tgz"
-  integrity sha512-nTzEc/z0/QHwu6gJhYSh5TWDSzNLO9bmtP4aQzStfqT8RRoh1bYRomszxjc7e3CsZT8xrG88XKlZ4iKL6zHLoQ==
+expo-updates@~0.11.7:
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.11.7.tgz#c267ce8818d42a997d49a1e24b11b4887a2fb17b"
+  integrity sha512-zmteCFOBj2OtDOZO5eGgFHR4EXZvFUv5DM56aMkZ6+PE/fo+8ZjNZLxkQWD33GXmXs/9jLCLKXPj2+6kCJvyhg==
   dependencies:
     "@expo/config" "^6.0.6"
     "@expo/config-plugins" "^4.0.2"
@@ -3024,6 +3024,11 @@ hermes-profile-transformer@^0.0.6:
   integrity sha512-cnN7bQUm65UWOy6cbGcCcZ3rpwW8Q/j4OP5aWRhEry4Z2t2aR1cjrbp0BS+KiBN0smvP1caBgAuxutvyvJILzQ==
   dependencies:
     source-map "^0.7.3"
+
+hoist-non-react-statics@^2.3.1:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
 http-errors@2.0.0:
   version "2.0.0"
@@ -4508,6 +4513,18 @@ react-native-codegen@^0.0.6:
     flow-parser "^0.121.0"
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
+
+react-native-safe-area-context@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
+  integrity sha512-yOwiiPJ1rk+/nfK13eafbpW6sKW0jOnsRem2C1LPJjM3tfTof6hlvV5eWHATye3XOpu2cJ7N+HdkUvUDGwFD2Q==
+
+react-native-safe-area-view@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-1.1.1.tgz#9833e34c384d0513f4831afcd1e54946f13897b2"
+  integrity sha512-bbLCtF+tqECyPWlgkWbIwx4vDPb0GEufx/ZGcSS4UljMcrpwluachDXoW9DBxhbMCc6k1V0ccqHWN7ntbRdERQ==
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
 
 react-native-web@0.17.1:
   version "0.17.1"
