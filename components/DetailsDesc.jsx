@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { COLORS, FONTS, SIZES } from '../constants';
 import { ProjectTitle, ProjectVacancy } from './SubInfo';
 
 const DetailsDesc = ({ data }) => {
+  const [text, setText] = useState(data.description.slice(0, 100));
+  const [readMore, setReadMore] = useState(false);
+
   return (
     <>
       <View
@@ -46,7 +49,26 @@ const DetailsDesc = ({ data }) => {
               lineHeight: SIZES.large,
             }}
           >
-            {data.description}
+            {text}
+            {!readMore && '...'}
+            <Text
+              style={{
+                fontSize: SIZES.small,
+                fontFamily: FONTS.semiBold,
+                color: COLORS.primary,
+              }}
+              onPress={() => {
+                if (!readMore) {
+                  setText(data.description);
+                  setReadMore(true);
+                } else {
+                  setText(data.description.slice(0, 100));
+                  setReadMore(false);
+                }
+              }}
+            >
+              {readMore ? 'Show less' : 'Read More'}
+            </Text>
           </Text>
         </View>
       </View>
