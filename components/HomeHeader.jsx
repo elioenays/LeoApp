@@ -38,8 +38,8 @@ const HomeHeader = ({ onSearch }) => {
               height: '100%',
               // overflow: 'hidden',
               borderRadius: 100,
-              borderColor: '#fff',
-              borderWidth: 1,
+              borderColor: COLORS.blue,
+              borderWidth: 2,
             }}
           />
           <Image

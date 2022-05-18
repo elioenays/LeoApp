@@ -34,7 +34,7 @@ const DetailsDesc = ({ data }) => {
             color: COLORS.primary,
           }}
         >
-          Description
+          Descrição
         </Text>
         <View
           style={{

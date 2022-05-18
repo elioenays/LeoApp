@@ -4,7 +4,7 @@ const ProjectData = [
   {
     id: 'PRJ-01',
     name: 'Noite dos Sonhos😍',
-    creator: 'João Lucas Messias',
+    creator: 'João Lucas',
     vacancies: 30,
     description:
       'A noite dos sonhos foi um projeto realizado pelo LEO Clube de Palmas, onde buscamos promover, para 10 meninas, selecionadas em escolas públicas da nossa cidade, por meio de um concurso de redação, e dar a elas uma verdadeira noite dos sonhos, uma festa de 15 anos, com direito a tudo que elas tinham direito.Teve book, Salao, produção, vestido de festa, decoração, bolo, doces, e muito mais, precisamos mais uma vez agradecer aos nossos fornecedores, sem vocês isso jamais seria possível! Fica aqui nossa eterna gratidão!',
@@ -19,7 +19,7 @@ const ProjectData = [
       },
       {
         id: 'VOL-12',
-        name: 'João Lucas Messias',
+        name: 'João Lucas',
         cargo: 'Associado',
         image: assets.joao,
         date: 'December 27, 2019 at 1:50 PM',
@@ -37,7 +37,7 @@ const ProjectData = [
     id: 'PRJ-02',
     name: 'Pizza Solidária🍕',
     creator: 'Micael Sobrinho',
-    vagas: 20,
+    vacancies: 20,
     description:
       'A noite dos sonhos foi um projeto realizado pelo LEO Clube de Palmas, onde buscamos promover, para 10 meninas, selecionadas em escolas públicas da nossa cidade, por meio de um concurso de redação, e dar a elas uma verdadeira noite dos sonhos, uma festa de 15 anos, com direito a tudo que elas tinham direito.Teve book, Salao, produção, vestido de festa, decoração, bolo, doces, e muito mais, precisamos mais uma vez agradecer aos nossos fornecedores, sem vocês isso jamais seria possível! Fica aqui nossa eterna gratidão!',
     image: assets.pizza,
@@ -51,7 +51,7 @@ const ProjectData = [
       },
       {
         id: 'VOL-12',
-        name: 'João Lucas Messias',
+        name: 'João Lucas',
         cargo: 'Associado',
         image: assets.joao,
         date: 'December 27, 2019 at 1:50 PM',
@@ -68,8 +68,8 @@ const ProjectData = [
   {
     id: 'PRJ-03',
     name: 'Ação Solidária🐶',
-    creator: 'João Lucas Messias',
-    vagas: 15,
+    creator: 'João Lucas',
+    vacancies: 15,
     description:
       'A noite dos sonhos foi um projeto realizado pelo LEO Clube de Palmas, onde buscamos promover, para 10 meninas, selecionadas em escolas públicas da nossa cidade, por meio de um concurso de redação, e dar a elas uma verdadeira noite dos sonhos, uma festa de 15 anos, com direito a tudo que elas tinham direito.Teve book, Salao, produção, vestido de festa, decoração, bolo, doces, e muito mais, precisamos mais uma vez agradecer aos nossos fornecedores, sem vocês isso jamais seria possível! Fica aqui nossa eterna gratidão!',
     image: assets.dog,
@@ -83,7 +83,7 @@ const ProjectData = [
       },
       {
         id: 'VOL-12',
-        name: 'João Lucas Messias',
+        name: 'João Lucas',
         cargo: 'Associado',
         image: assets.joao,
         date: 'December 27, 2019 at 1:50 PM',
