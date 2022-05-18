@@ -1,7 +1,13 @@
 import { Image, Text, View } from 'react-native';
 import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
 
-export const ProjectTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
+export const ProjectTitle = ({
+  title,
+  subTitle,
+  titleSize,
+  subTitleSize,
+  vacancies,
+}) => {
   return (
     <View>
       <Text
@@ -22,6 +28,15 @@ export const ProjectTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
         }}
       >
         {subTitle}
+      </Text>
+      <Text
+        style={{
+          fontFamily: FONTS.medium,
+          fontSize: SIZES.font,
+          color: COLORS.primary,
+        }}
+      >
+        {vacancies} Vagas Disponiveis
       </Text>
     </View>
   );
