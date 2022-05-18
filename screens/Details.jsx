@@ -1,11 +1,21 @@
 import React from 'react';
-import { FlatList, Image, SafeAreaView, StatusBar, View } from 'react-native';
-import { CircleButton, RectButton } from '../components/Button';
-import DetailsDesc from '../components/DetailsDesc';
-import DetailsVoluntary from '../components/DetailsVoluntary';
-import FocusedStatusBar from '../components/FocusedStatusBar';
-import { SubInfo } from '../components/SubInfo';
-import { assets, SHADOWS, SIZES } from '../constants';
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  View,
+} from 'react-native';
+import {
+  CircleButton,
+  DetailsDesc,
+  DetailsVoluntary,
+  FocusedStatusBar,
+  RectButton,
+  SubInfo,
+} from '../components';
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
 
 const DetailsHeader = ({ data, navigation }) => (
   <View style={{ width: '100%', height: 373 }}>
@@ -65,6 +75,18 @@ const Details = ({ route, navigation }) => {
 
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
+
+              {data.volunteers.length > 0 && (
+                <Text
+                  style={{
+                    fontSize: SIZES.font,
+                    fontFamily: FONTS.semiBold,
+                    color: COLORS.primary,
+                  }}
+                >
+                  Current Bids
+                </Text>
+              )}
             </View>
           </React.Fragment>
         )}

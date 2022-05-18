@@ -1,12 +1,9 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { FlatList, SafeAreaView, View } from 'react-native';
-import FocusedStatusBar from '../components/FocusedStatusBar';
-import HomeHeader from '../components/HomeHeader';
-import ProjectCard from '../components/ProjectCard';
+import { FocusedStatusBar, HomeHeader, ProjectCard } from '../components';
 import { COLORS, ProjectData } from '../constants';
 
 const Home = () => {
-
   const [projectData, setProjectData] = useState(ProjectData);
 
   const handleSearch = value => {
@@ -33,7 +30,7 @@ const Home = () => {
             renderItem={({ item }) => <ProjectCard data={item} />}
             keyExtractor={item => item.id}
             showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader onSearch={handleSearch}/>}
+            ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
           />
         </View>
         <View
