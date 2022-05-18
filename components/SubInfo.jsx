@@ -36,7 +36,7 @@ export const ProjectTitle = ({
           color: COLORS.primary,
         }}
       >
-        {vacancies} Vagas Disponiveis
+        {/* {vacancies} Vagas Disponiveis */}
       </Text>
     </View>
   );

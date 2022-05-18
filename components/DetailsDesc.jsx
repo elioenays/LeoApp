@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { COLORS, FONTS, SIZES } from '../constants';
-import { ProjectTitle } from './SubInfo';
+import { ProjectTitle, ProjectVacancy } from './SubInfo';
 
 const DetailsDesc = ({ data }) => {
   const [text, setText] = useState(data.description.slice(0, 100));
@@ -24,8 +24,8 @@ const DetailsDesc = ({ data }) => {
           titleSize={SIZES.extraLarge}
           subTitleSize={SIZES.font}
         />
-        {/* <ProjectVacancy vacancies={data.vacancies} /> */}
       </View>
+      <ProjectVacancy vacancies={data.vacancies - data.volunteers.length} />
 
       <View style={{ marginVertical: SIZES.extraLarge * 1.5 }}>
         <Text
