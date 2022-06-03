@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   FlatList,
   Image,
@@ -6,7 +6,7 @@ import {
   StatusBar,
   Text,
   View,
-} from 'react-native';
+} from 'react-native'
 import {
   CircleButton,
   DetailsDesc,
@@ -14,8 +14,8 @@ import {
   FocusedStatusBar,
   RectButton,
   SubInfo,
-} from '../components';
-import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
+} from '../components'
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants'
 
 const DetailsHeader = ({ data, navigation }) => (
   <View style={{ width: '100%', height: 373 }}>
@@ -36,10 +36,10 @@ const DetailsHeader = ({ data, navigation }) => (
       top={StatusBar.currentHeight + 10}
     />
   </View>
-);
+)
 
 const Details = ({ route, navigation }) => {
-  const { data } = route.params;
+  const { data } = route.params
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -92,7 +92,7 @@ const Details = ({ route, navigation }) => {
         )}
       />
     </SafeAreaView>
-  );
-};
+  )
+}
 
-export default Details;
+export default Details

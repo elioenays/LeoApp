@@ -1,5 +1,5 @@
-import { Image, Text, TouchableOpacity } from 'react-native';
-import { COLORS, FONTS, SHADOWS, SIZES } from '../constants';
+import { Image, Text, TouchableOpacity } from 'react-native'
+import { COLORS, FONTS, SHADOWS, SIZES } from '../constants'
 
 export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
   return (
@@ -23,8 +23,8 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
         style={{ width: 24, height: 24 }}
       />
     </TouchableOpacity>
-  );
-};
+  )
+}
 
 export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
   return (
@@ -49,5 +49,5 @@ export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
         Participar
       </Text>
     </TouchableOpacity>
-  );
-};
+  )
+}

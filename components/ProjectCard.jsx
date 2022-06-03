@@ -1,12 +1,12 @@
-import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { Image, View } from 'react-native';
-import { CircleButton, RectButton } from '../components/Button';
-import { assets, COLORS, SHADOWS, SIZES } from '../constants';
-import { ProjectTitle, ProjectVacancy, SubInfo } from './SubInfo';
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
+import { Image, View } from 'react-native'
+import { CircleButton, RectButton } from '../components/Button'
+import { assets, COLORS, SHADOWS, SIZES } from '../constants'
+import { ProjectTitle, ProjectVacancy, SubInfo } from './SubInfo'
 
 const ProjectCard = ({ data }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   return (
     <View
@@ -20,7 +20,7 @@ const ProjectCard = ({ data }) => {
     >
       <View style={{ width: '100%', height: 250 }}>
         <Image
-          source={data.image}
+          source={data.imageUrl}
           resizeMode='cover'
           style={{
             width: '100%',
@@ -41,7 +41,7 @@ const ProjectCard = ({ data }) => {
       >
         <ProjectTitle
           title={data.name}
-          subTitle={data.creator}
+          subTitle={data.name}
           titleSize={SIZES.large}
           subTitleSize={SIZES.small}
         />
@@ -54,7 +54,7 @@ const ProjectCard = ({ data }) => {
             alignItems: 'center',
           }}
         >
-          <ProjectVacancy vacancies={data.vacancies - data.volunteers.length} />
+          <ProjectVacancy vacancies={data.vacancies} />
           <RectButton
             minWidth={120}
             fontSize={SIZES.font}
@@ -63,7 +63,7 @@ const ProjectCard = ({ data }) => {
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

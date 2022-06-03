@@ -1,24 +1,41 @@
-import { useState } from 'react';
-import { FlatList, SafeAreaView, View } from 'react-native';
-import { FocusedStatusBar, HomeHeader, ProjectCard } from '../components';
-import { COLORS, ProjectData } from '../constants';
+import React, { useEffect, useState } from 'react'
+import { FlatList, SafeAreaView, View } from 'react-native'
+import { FocusedStatusBar, HomeHeader, ProjectCard } from '../components'
+import { COLORS } from '../constants'
+import api from '../services/api'
+
+export interface Project {
+  name: string
+  description: string
+  imageUrl: string
+  vacancies: string
+  id: string
+}
 
 const Home = () => {
-  const [projectData, setProjectData] = useState(ProjectData);
+  const [projectData, setProjectData] = useState<Project[]>([])
+
+  useEffect(() => {
+    api.get('project').then(response => {
+      setProjectData(response.data)
+    })
+  }, [])
+
+  console.log(projectData)
 
   const handleSearch = value => {
-    if (!value.length) return setProjectData(ProjectData);
+    if (!value.length) return setProjectData([])
 
-    const filteredData = ProjectData.filter(item =>
+    const filteredData = projectData.filter(item =>
       item.name.toLowerCase().includes(value.toLowerCase()),
-    );
+    )
 
     if (filteredData.length) {
-      setProjectData(filteredData);
+      setProjectData(filteredData)
     } else {
-      setProjectData(ProjectData);
+      setProjectData(projectData)
     }
-  };
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -27,8 +44,8 @@ const Home = () => {
         <View style={{ zIndex: 0 }}>
           <FlatList
             data={projectData}
+            keyExtractor={project => project.id}
             renderItem={({ item }) => <ProjectCard data={item} />}
-            keyExtractor={item => item.id}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
           />
@@ -48,7 +65,7 @@ const Home = () => {
         </View>
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
