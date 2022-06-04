@@ -4,24 +4,18 @@ import { FocusedStatusBar, HomeHeader, ProjectCard } from '../components'
 import { COLORS } from '../constants'
 import api from '../services/api'
 
-export interface Project {
-  name: string
-  description: string
-  imageUrl: string
-  vacancies: string
-  id: string
-}
-
 const Home = () => {
-  const [projectData, setProjectData] = useState<Project[]>([])
+  const [projectData, setProjectData] = useState([])
+
+  const getProject = async () => {
+    const { data } = await api.get('project')
+    setProjectData(data)
+    console.log(data)
+  }
 
   useEffect(() => {
-    api.get('project').then(response => {
-      setProjectData(response.data)
-    })
+    getProject()
   }, [])
-
-  console.log(projectData)
 
   const handleSearch = value => {
     if (!value.length) return setProjectData([])

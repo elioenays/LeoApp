@@ -20,7 +20,7 @@ const ProjectCard = ({ data }) => {
     >
       <View style={{ width: '100%', height: 250 }}>
         <Image
-          source={data.imageUrl}
+          source={{ uri: data.imageUrl }}
           resizeMode='cover'
           style={{
             width: '100%',
@@ -41,7 +41,7 @@ const ProjectCard = ({ data }) => {
       >
         <ProjectTitle
           title={data.name}
-          subTitle={data.name}
+          subTitle={data.participations[0].user.name}
           titleSize={SIZES.large}
           subTitleSize={SIZES.small}
         />
