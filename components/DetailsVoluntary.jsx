@@ -17,7 +17,7 @@ const DetailsVoluntary = ({ voluntary }) => {
       <Image
         source={{ uri: voluntary.user.imageUrl }}
         resizeMode='contain'
-        style={{ width: 48, height: 48 }}
+        style={{ width: 48, height: 48, borderRadius: 100 }}
       />
 
       <View>

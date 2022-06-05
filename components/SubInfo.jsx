@@ -80,14 +80,23 @@ export const ImageCMP = ({ imgUrl, index }) => {
 }
 
 export const People = ({ data }) => {
+  var images = data.participations.map(users => {
+    const user = users.user
+    return user
+  })
+
   return (
     <View
       style={{
         flexDirection: 'row',
       }}
     >
-      {[data.participations].map(({ imageUrl }, index) => (
-        <ImageCMP imgUrl={imageUrl} index={index} key={`People-${index}`} />
+      {data.participations.map((users, index) => (
+        <ImageCMP
+          imgUrl={users.user.imageUrl}
+          index={index}
+          key={`People-${index}`}
+        />
       ))}
     </View>
   )
