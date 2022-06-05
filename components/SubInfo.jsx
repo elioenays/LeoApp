@@ -1,5 +1,6 @@
-import { Image, Text, View } from 'react-native';
-import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
+import { differenceInDays, parseISO } from 'date-fns'
+import { Image, Text, View } from 'react-native'
+import { COLORS, FONTS, SHADOWS, SIZES } from '../constants'
 
 export const ProjectTitle = ({
   title,
@@ -39,8 +40,8 @@ export const ProjectTitle = ({
         {/* {vacancies} Vagas Disponiveis */}
       </Text>
     </View>
-  );
-};
+  )
+}
 
 export const ProjectVacancy = ({ vacancies }) => {
   return (
@@ -60,8 +61,8 @@ export const ProjectVacancy = ({ vacancies }) => {
         {vacancies} Vagas Disponiveis
       </Text>
     </View>
-  );
-};
+  )
+}
 
 export const ImageCMP = ({ imgUrl, index }) => {
   return (
@@ -75,26 +76,26 @@ export const ImageCMP = ({ imgUrl, index }) => {
         marginLeft: index === 0 ? 0 : -SIZES.font,
       }}
     />
-  );
-};
+  )
+}
 
-export const People = () => {
+export const People = ({ data }) => {
   return (
     <View
       style={{
         flexDirection: 'row',
       }}
     >
-      {[assets.joao, assets.bob, assets.molusco, assets.plancton].map(
-        (imgUrl, index) => (
-          <ImageCMP imgUrl={imgUrl} index={index} key={`People-${index}`} />
-        ),
-      )}
+      {[data.participations].map(({ imageUrl }, index) => (
+        <ImageCMP imgUrl={imageUrl} index={index} key={`People-${index}`} />
+      ))}
     </View>
-  );
-};
+  )
+}
 
 export const EndDate = ({ data }) => {
+  const numberOfDays = differenceInDays(parseISO(data.endsIn), Date.now())
+
   return (
     <View
       style={{
@@ -125,13 +126,13 @@ export const EndDate = ({ data }) => {
           color: COLORS.primary,
         }}
       >
-        22 dias
+        {numberOfDays} dias
       </Text>
     </View>
-  );
-};
+  )
+}
 
-export const SubInfo = () => {
+export const SubInfo = ({ data }) => {
   return (
     <View
       style={{
@@ -142,8 +143,8 @@ export const SubInfo = () => {
         justifyContent: 'space-between',
       }}
     >
-      <People />
-      <EndDate />
+      <People data={data} />
+      <EndDate data={data} />
     </View>
-  );
-};
+  )
+}

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Text, View } from 'react-native';
-import { COLORS, FONTS, SIZES } from '../constants';
-import { ProjectTitle, ProjectVacancy } from './SubInfo';
+import React, { useState } from 'react'
+import { Text, View } from 'react-native'
+import { COLORS, FONTS, SIZES } from '../constants'
+import { ProjectTitle, ProjectVacancy } from './SubInfo'
 
 const DetailsDesc = ({ data }) => {
-  const [text, setText] = useState(data.description.slice(0, 100));
-  const [readMore, setReadMore] = useState(false);
+  const [text, setText] = useState(data.description.slice(0, 100))
+  const [readMore, setReadMore] = useState(false)
 
   return (
     <>
@@ -19,13 +19,13 @@ const DetailsDesc = ({ data }) => {
       >
         <ProjectTitle
           title={data.name}
-          subTitle={data.creator}
+          subTitle={data.participations[0].user.name}
           vacancies={data.vacancies}
           titleSize={SIZES.extraLarge}
           subTitleSize={SIZES.font}
         />
       </View>
-      <ProjectVacancy vacancies={data.vacancies - data.volunteers.length} />
+      <ProjectVacancy vacancies={data.vacancies} />
 
       <View style={{ marginVertical: SIZES.extraLarge * 1.5 }}>
         <Text
@@ -60,11 +60,11 @@ const DetailsDesc = ({ data }) => {
               }}
               onPress={() => {
                 if (!readMore) {
-                  setText(data.description);
-                  setReadMore(true);
+                  setText(data.description)
+                  setReadMore(true)
                 } else {
-                  setText(data.description.slice(0, 100));
-                  setReadMore(false);
+                  setText(data.description.slice(0, 100))
+                  setReadMore(false)
                 }
               }}
             >
@@ -74,7 +74,7 @@ const DetailsDesc = ({ data }) => {
         </View>
       </View>
     </>
-  );
-};
+  )
+}
 
-export default DetailsDesc;
+export default DetailsDesc

@@ -10,7 +10,6 @@ const Home = () => {
   const getProject = async () => {
     const { data } = await api.get('project')
     setProjectData(data)
-    console.log(data)
   }
 
   useEffect(() => {

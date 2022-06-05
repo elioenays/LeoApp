@@ -20,7 +20,7 @@ import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants'
 const DetailsHeader = ({ data, navigation }) => (
   <View style={{ width: '100%', height: 373 }}>
     <Image
-      source={data.image}
+      source={{ uri: data.imageUrl }}
       resizeMode='cover'
       style={{ width: '100%', height: '100%' }}
     />
@@ -63,20 +63,20 @@ const Details = ({ route, navigation }) => {
         <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
       </View>
       <FlatList
-        data={data.volunteers}
+        data={data.participations}
+        keyExtractor={item => item.userId}
         renderItem={({ item }) => <DetailsVoluntary voluntary={item} />}
-        keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
-            <SubInfo />
+            <SubInfo data={data} />
 
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
 
-              {data.volunteers.length > 0 && (
+              {data.participations.length > 0 && (
                 <Text
                   style={{
                     fontSize: SIZES.font,

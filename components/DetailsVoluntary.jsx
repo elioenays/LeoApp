@@ -1,6 +1,6 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { COLORS, FONTS, SIZES } from '../constants';
+import React from 'react'
+import { Image, Text, View } from 'react-native'
+import { COLORS, FONTS, SIZES } from '../constants'
 
 const DetailsVoluntary = ({ voluntary }) => {
   return (
@@ -15,7 +15,7 @@ const DetailsVoluntary = ({ voluntary }) => {
       }}
     >
       <Image
-        source={voluntary.image}
+        source={{ uri: voluntary.user.imageUrl }}
         resizeMode='contain'
         style={{ width: 48, height: 48 }}
       />
@@ -28,7 +28,7 @@ const DetailsVoluntary = ({ voluntary }) => {
             color: COLORS.primary,
           }}
         >
-          {voluntary.name}
+          {voluntary.user.name}
         </Text>
         <Text
           style={{
@@ -38,11 +38,11 @@ const DetailsVoluntary = ({ voluntary }) => {
             marginTop: 3,
           }}
         >
-          {voluntary.cargo}
+          {voluntary.user.role}
         </Text>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default DetailsVoluntary;
+export default DetailsVoluntary
