@@ -70,12 +70,12 @@ export const styles = {
     backgroundColor: '#F6F7F8',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,  
   },
 
   containerLogo: {
     justifyContent: 'center',
-    marginTop: 65
+    marginTop: 65,
+    marginBottom: 31,
   },
 
   logo: {
@@ -84,7 +84,7 @@ export const styles = {
   },
 
   label: {
-    marginTop: 25,
+    marginTop: '20%',
     marginBottom: 49,
     fontSize: SIZES.large,
     fontFamily: FONTS.semiBold,

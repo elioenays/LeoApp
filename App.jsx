@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import Details from './screens/Details';
 import Home from './screens/Home';
+import SignUp from './screens/SignUp';
+import PassRec from './screens/PassRec'
 
 const Stack = createNativeStackNavigator();
 
@@ -28,9 +30,11 @@ export default function App() {
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator
-        initialRouteName='Home'
+        initialRouteName='SignUp'
         screenOptions={{ headerShown: false }}
       >
+        <Stack.Screen name='PassRec' component={PassRec} />
+        <Stack.Screen name='SignUp' component={SignUp} />
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='Details' component={Details} />
       </Stack.Navigator>

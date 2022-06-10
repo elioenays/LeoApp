@@ -53,7 +53,6 @@ const SignUp = () => {
         />
 
         <MainRectButton onPress={()=>cadastro()} />
-          <Text>Criar Conta</Text>
 
         <TouchableOpacity>
           <Text style={styles.loginText}>Já tem uma conta? Clique para acessar!</Text>
