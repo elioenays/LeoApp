@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   FlatList,
   Image,
@@ -6,7 +6,7 @@ import {
   StatusBar,
   Text,
   View,
-} from 'react-native'
+} from 'react-native';
 import {
   CircleButton,
   DetailsDesc,
@@ -14,13 +14,13 @@ import {
   FocusedStatusBar,
   RectButton,
   SubInfo,
-} from '../components'
-import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants'
+} from '../components';
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
 
 const DetailsHeader = ({ data, navigation }) => (
   <View style={{ width: '100%', height: 373 }}>
     <Image
-      source={{ uri: data.imageUrl }}
+      source={data.image}
       resizeMode='cover'
       style={{ width: '100%', height: '100%' }}
     />
@@ -36,10 +36,10 @@ const DetailsHeader = ({ data, navigation }) => (
       top={StatusBar.currentHeight + 10}
     />
   </View>
-)
+);
 
 const Details = ({ route, navigation }) => {
-  const { data } = route.params
+  const { data } = route.params;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -63,20 +63,20 @@ const Details = ({ route, navigation }) => {
         <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
       </View>
       <FlatList
-        data={data.participations}
-        keyExtractor={item => item.userId}
+        data={data.volunteers}
         renderItem={({ item }) => <DetailsVoluntary voluntary={item} />}
+        keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3 }}
         ListHeaderComponent={() => (
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
-            <SubInfo data={data} />
+            <SubInfo />
 
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
 
-              {data.participations.length > 0 && (
+              {data.volunteers.length > 0 && (
                 <Text
                   style={{
                     fontSize: SIZES.font,
@@ -92,7 +92,7 @@ const Details = ({ route, navigation }) => {
         )}
       />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;

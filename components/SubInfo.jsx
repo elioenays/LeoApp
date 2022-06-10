@@ -1,6 +1,5 @@
-import { differenceInDays, parseISO } from 'date-fns'
-import { Image, Text, View } from 'react-native'
-import { COLORS, FONTS, SHADOWS, SIZES } from '../constants'
+import { Image, Text, View } from 'react-native';
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants';
 
 export const ProjectTitle = ({
   title,
@@ -40,8 +39,8 @@ export const ProjectTitle = ({
         {/* {vacancies} Vagas Disponiveis */}
       </Text>
     </View>
-  )
-}
+  );
+};
 
 export const ProjectVacancy = ({ vacancies }) => {
   return (
@@ -61,8 +60,8 @@ export const ProjectVacancy = ({ vacancies }) => {
         {vacancies} Vagas Disponiveis
       </Text>
     </View>
-  )
-}
+  );
+};
 
 export const ImageCMP = ({ imgUrl, index }) => {
   return (
@@ -76,35 +75,26 @@ export const ImageCMP = ({ imgUrl, index }) => {
         marginLeft: index === 0 ? 0 : -SIZES.font,
       }}
     />
-  )
-}
+  );
+};
 
-export const People = ({ data }) => {
-  var images = data.participations.map(users => {
-    const user = users.user
-    return user
-  })
-
+export const People = () => {
   return (
     <View
       style={{
         flexDirection: 'row',
       }}
     >
-      {data.participations.map((users, index) => (
-        <ImageCMP
-          imgUrl={users.user.imageUrl}
-          index={index}
-          key={`People-${index}`}
-        />
-      ))}
+      {[assets.joao, assets.bob, assets.molusco, assets.plancton].map(
+        (imgUrl, index) => (
+          <ImageCMP imgUrl={imgUrl} index={index} key={`People-${index}`} />
+        ),
+      )}
     </View>
-  )
-}
+  );
+};
 
 export const EndDate = ({ data }) => {
-  const numberOfDays = differenceInDays(parseISO(data.endsIn), Date.now())
-
   return (
     <View
       style={{
@@ -135,13 +125,13 @@ export const EndDate = ({ data }) => {
           color: COLORS.primary,
         }}
       >
-        {numberOfDays} dias
+        22 dias
       </Text>
     </View>
-  )
-}
+  );
+};
 
-export const SubInfo = ({ data }) => {
+export const SubInfo = () => {
   return (
     <View
       style={{
@@ -152,8 +142,8 @@ export const SubInfo = ({ data }) => {
         justifyContent: 'space-between',
       }}
     >
-      <People data={data} />
-      <EndDate data={data} />
+      <People />
+      <EndDate />
     </View>
-  )
-}
+  );
+};

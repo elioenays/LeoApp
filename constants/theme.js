@@ -1,7 +1,8 @@
 export const COLORS = {
   primary: '#3E3E3E',
   secondary: '#4D626C',
-  white: '#FFF',
+  white: '#FFFFFF',
+  lightgray: '#959595',
   gray: '#74858C',
   yellow: '#F9C910',
   blue: '#448AFF',
@@ -60,5 +61,61 @@ export const SHADOWS = {
     shadowRadius: 9.11,
 
     elevation: 14,
+  },
+};
+
+export const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: '#F6F7F8',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,  
+  },
+
+  containerLogo: {
+    justifyContent: 'center',
+    marginTop: 65
+  },
+
+  logo: {
+    width: 121,
+    height: 121,
+  },
+
+  label: {
+    marginTop: 25,
+    marginBottom: 49,
+    fontSize: SIZES.large,
+    fontFamily: FONTS.semiBold,
+    justifyContent: 'center',
+  },
+
+  textInput: {
+    width: 280,
+    height: 61,
+    paddingLeft: 35,
+    marginBottom: 25,
+    fontFamily: FONTS.regular,
+    fontSize: SIZES.medium,
+    /* Branco */
+    backgroundColor: COLORS.white,
+    /* Borda Cinza */
+    borderWidth: 0.5,
+    borderColor: COLORS.lightgray,
+    borderRadius: SIZES.small
+  },
+
+  loginText: {
+    paddingTop: '60%',
+    fontFamily: FONTS.semiBold,
+    fontSize: SIZES.regular,
+  },
+
+  confirmButtom: {
+    fontFamily: FONTS.semiBold,
+    fontSize: SIZES.extraLarge,
+    color: COLORS.white,
+    textAlign: 'center',
   },
 };

@@ -1,4 +1,4 @@
-import { CircleButton, RectButton } from './Button';
+import { CircleButton, RectButton, MainRectButton } from './Button';
 import DetailsDesc from './DetailsDesc';
 import DetailsVoluntary from './DetailsVoluntary';
 import FocusedStatusBar from './FocusedStatusBar';
@@ -12,6 +12,7 @@ export {
   SubInfo,
   CircleButton,
   RectButton,
+  MainRectButton,
   DetailsDesc,
   DetailsVoluntary,
   ProjectCard,

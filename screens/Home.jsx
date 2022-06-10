@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { FlatList, SafeAreaView, View } from 'react-native'
-import { FocusedStatusBar, HomeHeader, ProjectCard } from '../components'
-import { COLORS } from '../constants'
-import api from '../services/api'
+import { useState } from 'react';
+import { FlatList, SafeAreaView, View } from 'react-native';
+import { FocusedStatusBar, HomeHeader, ProjectCard } from '../components';
+import { COLORS, ProjectData } from '../constants';
 
 const Home = () => {
-  const [projectData, setProjectData] = useState([])
-
-  const getProject = async () => {
-    const { data } = await api.get('project')
-    setProjectData(data)
-  }
-
-  useEffect(() => {
-    getProject()
-  }, [])
+  const [projectData, setProjectData] = useState(ProjectData);
 
   const handleSearch = value => {
-    if (!value.length) return setProjectData([])
+    if (!value.length) return setProjectData(ProjectData);
 
-    const filteredData = projectData.filter(item =>
+    const filteredData = ProjectData.filter(item =>
       item.name.toLowerCase().includes(value.toLowerCase()),
-    )
+    );
 
     if (filteredData.length) {
-      setProjectData(filteredData)
+      setProjectData(filteredData);
     } else {
-      setProjectData(projectData)
+      setProjectData(ProjectData);
     }
-  }
+  };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -37,8 +27,8 @@ const Home = () => {
         <View style={{ zIndex: 0 }}>
           <FlatList
             data={projectData}
-            keyExtractor={project => project.id}
             renderItem={({ item }) => <ProjectCard data={item} />}
+            keyExtractor={item => item.id}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
           />
@@ -58,7 +48,7 @@ const Home = () => {
         </View>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

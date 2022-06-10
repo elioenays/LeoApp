@@ -1,12 +1,12 @@
-import { useNavigation } from '@react-navigation/native'
-import React from 'react'
-import { Image, View } from 'react-native'
-import { CircleButton, RectButton } from '../components/Button'
-import { assets, COLORS, SHADOWS, SIZES } from '../constants'
-import { ProjectTitle, ProjectVacancy, SubInfo } from './SubInfo'
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { Image, View } from 'react-native';
+import { CircleButton, RectButton } from '../components/Button';
+import { assets, COLORS, SHADOWS, SIZES } from '../constants';
+import { ProjectTitle, ProjectVacancy, SubInfo } from './SubInfo';
 
 const ProjectCard = ({ data }) => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   return (
     <View
@@ -20,7 +20,7 @@ const ProjectCard = ({ data }) => {
     >
       <View style={{ width: '100%', height: 250 }}>
         <Image
-          source={{ uri: data.imageUrl }}
+          source={data.image}
           resizeMode='cover'
           style={{
             width: '100%',
@@ -31,7 +31,7 @@ const ProjectCard = ({ data }) => {
         />
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
       </View>
-      <SubInfo data={data} />
+      <SubInfo />
 
       <View
         style={{
@@ -41,7 +41,7 @@ const ProjectCard = ({ data }) => {
       >
         <ProjectTitle
           title={data.name}
-          subTitle={data.participations[0].user.name}
+          subTitle={data.creator}
           titleSize={SIZES.large}
           subTitleSize={SIZES.small}
         />
@@ -54,7 +54,7 @@ const ProjectCard = ({ data }) => {
             alignItems: 'center',
           }}
         >
-          <ProjectVacancy vacancies={data.vacancies} />
+          <ProjectVacancy vacancies={data.vacancies - data.volunteers.length} />
           <RectButton
             minWidth={120}
             fontSize={SIZES.font}
@@ -63,7 +63,7 @@ const ProjectCard = ({ data }) => {
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;
