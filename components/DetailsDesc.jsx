@@ -51,6 +51,7 @@ const DetailsDesc = ({ data }) => {
             }}
           >
             {text}
+
             {!readMore && '...'}
             <Text
               style={{
@@ -68,6 +69,7 @@ const DetailsDesc = ({ data }) => {
                 }
               }}
             >
+              <br></br>
               {readMore ? 'Mostrar menos' : 'Ler mais'}
             </Text>
           </Text>

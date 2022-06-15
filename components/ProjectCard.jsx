@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { Image, View } from 'react-native'
-import { CircleButton, RectButton } from '../components/Button'
-import { assets, COLORS, SHADOWS, SIZES } from '../constants'
+import { RectButton } from '../components/Button'
+import { COLORS, SHADOWS, SIZES } from '../constants'
 import { ProjectTitle, ProjectVacancy, SubInfo } from './SubInfo'
 
 const ProjectCard = ({ data }) => {
@@ -29,7 +29,6 @@ const ProjectCard = ({ data }) => {
             borderTopRightRadius: SIZES.font,
           }}
         />
-        <CircleButton imgUrl={assets.heart} right={10} top={10} />
       </View>
       <SubInfo data={data} />
 

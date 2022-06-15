@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  FlatList,
-  Image,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  View,
-} from 'react-native'
+import { FlatList, Image, SafeAreaView, Text, View } from 'react-native'
 import {
   CircleButton,
   DetailsDesc,
@@ -28,12 +21,7 @@ const DetailsHeader = ({ data, navigation }) => (
       imgUrl={assets.left}
       handlePress={() => navigation.goBack()}
       left={15}
-      top={StatusBar.currentHeight + 10}
-    />
-    <CircleButton
-      imgUrl={assets.heart}
-      right={15}
-      top={StatusBar.currentHeight + 10}
+      top={8}
     />
   </View>
 )
