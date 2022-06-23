@@ -51,3 +51,37 @@ export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
     </TouchableOpacity>
   )
 }
+
+export const MainRectButton = ({
+  minWidth,
+  fontSize,
+  handlePress,
+  ...props
+}) => {
+  return (
+    <TouchableOpacity
+      style={{
+        width: 280,
+        backgroundColor: COLORS.green,
+        borderRadius: SIZES.large,
+        minWidth: minWidth,
+        height: 60,
+        padding: SIZES.large,
+        marginTop: 49,
+        ...props,
+      }}
+      onPress={handlePress}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: SIZES.large,
+          color: COLORS.white,
+          textAlign: 'center',
+        }}
+      >
+        Criar conta
+      </Text>
+    </TouchableOpacity>
+  )
+}
