@@ -85,3 +85,32 @@ export const MainRectButton = ({
     </TouchableOpacity>
   )
 }
+
+export const LoginButton = ({ minWidth, fontSize, handlePress, ...props }) => {
+  return (
+    <TouchableOpacity
+      style={{
+        width: 280,
+        backgroundColor: COLORS.green,
+        borderRadius: SIZES.large,
+        minWidth: minWidth,
+        height: 60,
+        padding: SIZES.large,
+        marginTop: 49,
+        ...props,
+      }}
+      onPress={handlePress}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: SIZES.large,
+          color: COLORS.white,
+          textAlign: 'center',
+        }}
+      >
+        Entrar
+      </Text>
+    </TouchableOpacity>
+  );
+};
