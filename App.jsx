@@ -30,7 +30,7 @@ export default function App() {
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator
-        initialRouteName='SignIn'
+        initialRouteName='Home'
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name='Home' component={Home} />
