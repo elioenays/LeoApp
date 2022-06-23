@@ -15,12 +15,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const cadastro = () => {
-    //alert(name);
-    //alert(email);
-    //alert(password);
-    // Realizar simulação e chamar no back-end.
-  }
+  const cadastro = () => {}
 
   return (
     <KeyboardAvoidingView style={styles.container}>
