@@ -8,7 +8,7 @@ export const COLORS = {
   darkBlue: '#416DFF',
   red: '#EE3424',
   green: '#00BD71',
-};
+}
 
 export const SIZES = {
   base: 8,
@@ -17,7 +17,7 @@ export const SIZES = {
   medium: 16,
   large: 18,
   extraLarge: 24,
-};
+}
 
 export const FONTS = {
   bold: 'PoppinsBold',
@@ -25,7 +25,7 @@ export const FONTS = {
   medium: 'PoppinsMedium',
   regular: 'PoppinsRegular',
   light: 'PoppinsLight',
-};
+}
 
 export const SHADOWS = {
   light: {
@@ -61,4 +61,60 @@ export const SHADOWS = {
 
     elevation: 14,
   },
-};
+}
+
+export const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: '#F6F7F8',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  containerLogo: {
+    justifyContent: 'center',
+    marginTop: 65,
+    marginBottom: 31,
+  },
+
+  logo: {
+    width: 121,
+    height: 121,
+  },
+
+  label: {
+    marginTop: '20%',
+    marginBottom: 49,
+    fontSize: SIZES.large,
+    fontFamily: FONTS.semiBold,
+    justifyContent: 'center',
+  },
+
+  textInput: {
+    width: 280,
+    height: 61,
+    paddingLeft: 35,
+    marginBottom: 25,
+    fontFamily: FONTS.regular,
+    fontSize: SIZES.medium,
+    /* Branco */
+    backgroundColor: COLORS.white,
+    /* Borda Cinza */
+    borderWidth: 0.5,
+    borderColor: COLORS.lightgray,
+    borderRadius: SIZES.small,
+  },
+
+  loginText: {
+    paddingTop: '60%',
+    fontFamily: FONTS.semiBold,
+    fontSize: SIZES.regular,
+  },
+
+  confirmButtom: {
+    fontFamily: FONTS.semiBold,
+    fontSize: SIZES.extraLarge,
+    color: COLORS.white,
+    textAlign: 'center',
+  },
+}
