@@ -7,13 +7,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import { FocusedStatusBar } from '../components'
-import { LoginButton } from '../components/Button'
+import { FocusedStatusBar, LoginButton } from '../components'
 import { styles } from '../constants'
+import api from '../services/api'
 
-const Signin = () => {
+const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  async function handleSignIn() {
+    const { data } = await api.post('auth/login', { email, password })
+
+    const user = data.user
+    const token = data.token
+    console.log({ user, token })
+  }
 
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -27,23 +35,25 @@ const Signin = () => {
         <Text style={styles.label}>Acesse sua conta</Text>
 
         <TextInput
-          name='inputEmail'
+          value={email}
           placeholder='E-mail'
+          keyboardType='email-address'
           autoCorrect={false}
-          onChange={text => setEmail(text)}
           style={styles.textInput}
+          onChangeText={text => setEmail(text)}
         />
 
         <TextInput
           secureTextEntry={true}
-          name='inputPassword'
+          value={password}
           placeholder='Senha'
+          returnKeyType='send'
           autoCorrect={false}
-          onChange={text => setPassword(text)}
           style={styles.textInput}
+          onChangeText={text => setPassword(text)}
         />
 
-        <LoginButton onPress={() => login()} />
+        <LoginButton handlePress={handleSignIn} />
 
         <TouchableOpacity>
           <Text style={styles.loginText}>
@@ -55,4 +65,4 @@ const Signin = () => {
   )
 }
 
-export default Signin
+export default SignIn
