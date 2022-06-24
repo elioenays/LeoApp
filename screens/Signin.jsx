@@ -1,55 +1,54 @@
 import React, { useState } from 'react'
-import { styles } from '../constants'
-import { View, TextInput, Text, Image, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
+import {
+  Image,
+  KeyboardAvoidingView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import { FocusedStatusBar } from '../components'
 import { LoginButton } from '../components/Button'
+import { styles } from '../constants'
 
 const Signin = () => {
-  
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const Signin = () => {
-    //alert(email);
-    //alert(password);
-    // Realizar simulação e chamar no back-end.
-  }
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   return (
     <KeyboardAvoidingView style={styles.container}>
-
-      <View style={ styles.containerLogo }>
-        <Image style={styles.logo} source= {require('../assets/logo_leo.png')} />
-
+      <View style={styles.containerLogo}>
+        <Image style={styles.logo} source={require('../assets/logo_leo.png')} />
       </View>
 
-      <View style={ styles.container }>
-        <FocusedStatusBar style="auto" />
+      <View style={styles.container}>
+        <FocusedStatusBar style='auto' />
 
-        <Text style={ styles.label }>Acesse sua conta</Text>
-        
+        <Text style={styles.label}>Acesse sua conta</Text>
 
-        <TextInput  
-          name="inputEmail" 
-          placeholder='E-mail' 
+        <TextInput
+          name='inputEmail'
+          placeholder='E-mail'
           autoCorrect={false}
-          onChange={text=>setEmail(text)} 
-          style={ styles.textInput } 
+          onChange={text => setEmail(text)}
+          style={styles.textInput}
         />
 
-        <TextInput 
-          secureTextEntry={true} 
-          name="inputPassword" 
-          placeholder='Senha' 
+        <TextInput
+          secureTextEntry={true}
+          name='inputPassword'
+          placeholder='Senha'
           autoCorrect={false}
-          onChange={text=>setPassword(text)} 
-          style={ styles.textInput }
+          onChange={text => setPassword(text)}
+          style={styles.textInput}
         />
 
-        <LoginButton onPress={()=>login()} />
+        <LoginButton onPress={() => login()} />
 
         <TouchableOpacity>
-          <Text style={styles.loginText}>Não tem uma conta? Clique para criar!</Text>
+          <Text style={styles.loginText}>
+            Não tem uma conta? Clique para criar!
+          </Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
