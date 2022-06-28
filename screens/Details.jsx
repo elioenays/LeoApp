@@ -1,5 +1,5 @@
-import React from 'react'
-import { FlatList, Image, SafeAreaView, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { FlatList, Image, Modal, SafeAreaView, Text, View } from 'react-native'
 import {
   CircleButton,
   DetailsDesc,
@@ -9,6 +9,7 @@ import {
   SubInfo,
 } from '../components'
 import { assets, COLORS, FONTS, SHADOWS, SIZES } from '../constants'
+import api from '../services/api'
 
 const DetailsHeader = ({ data, navigation }) => (
   <View style={{ width: '100%', height: 373 }}>
@@ -29,6 +30,19 @@ const DetailsHeader = ({ data, navigation }) => (
 const Details = ({ route, navigation }) => {
   const { data } = route.params
 
+  const [modalVisible, setModalVisible] = useState(false)
+
+  console.log(data)
+
+  const handleParticipation = async () => {
+    await api.post('participation', {
+      userId: 'b2787b31-abd6-4fe9-b624-3dc3a1006905',
+      projectId: '425e7e9e-7bc6-486b-a056-7473e4aa555a',
+    })
+
+    setModalVisible(true)
+  }
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar
@@ -48,7 +62,42 @@ const Details = ({ route, navigation }) => {
           zIndex: 1,
         }}
       >
-        <RectButton minWidth={170} fontSize={SIZES.large} {...SHADOWS.dark} />
+        <Modal
+          animationType='slide'
+          transparent={false}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible)
+          }}
+        >
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              flex: 1,
+            }}
+          >
+            <Text>
+              Parabens! Você está participando do projeto{' '}
+              <strong>{data.name}</strong>
+            </Text>
+            <RectButton
+              title={'Voltar'}
+              minWidth={170}
+              fontSize={SIZES.large}
+              {...SHADOWS.dark}
+              handlePress={() => setModalVisible(false)}
+            />
+          </View>
+        </Modal>
+
+        <RectButton
+          title={'Participar'}
+          minWidth={170}
+          fontSize={SIZES.large}
+          {...SHADOWS.dark}
+          handlePress={handleParticipation()}
+        />
       </View>
       <FlatList
         data={data.participations}

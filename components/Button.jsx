@@ -26,7 +26,13 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
   )
 }
 
-export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
+export const RectButton = ({
+  minWidth,
+  title,
+  fontSize,
+  handlePress,
+  ...props
+}) => {
   return (
     <TouchableOpacity
       style={{
@@ -46,7 +52,7 @@ export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
           textAlign: 'center',
         }}
       >
-        Participar
+        {title}
       </Text>
     </TouchableOpacity>
   )
