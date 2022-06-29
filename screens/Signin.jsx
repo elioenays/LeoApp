@@ -9,18 +9,15 @@ import {
 } from 'react-native'
 import { FocusedStatusBar, LoginButton } from '../components'
 import { styles } from '../constants'
-import api from '../services/api'
+import { login } from '../services/api/user'
 
 const SignIn = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   async function handleSignIn() {
-    const { data } = await api.post('auth/login', { email, password })
-
-    const user = data.user
-    const token = data.token
-    console.log({ user, token })
+    const data = await login(email, password)
+    console.log(data)
   }
 
   return (
