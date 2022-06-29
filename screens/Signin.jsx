@@ -17,7 +17,6 @@ const SignIn = () => {
 
   async function handleSignIn() {
     const data = await login(email, password)
-    console.log(data)
   }
 
   return (

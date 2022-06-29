@@ -32,8 +32,6 @@ const Details = ({ route, navigation }) => {
 
   const [modalVisible, setModalVisible] = useState(false)
 
-  console.log(data)
-
   const handleParticipation = async () => {
     try {
       await api.post('participation', {
@@ -83,6 +81,7 @@ const Details = ({ route, navigation }) => {
           >
             <Text>
               Parabens! Você está participando do projeto
+              <br />
               <strong>{data.name}</strong>
             </Text>
             <RectButton
