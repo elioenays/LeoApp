@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useFonts } from 'expo-font'
 import Details from './screens/Details'
 import Home from './screens/Home'
-import Signin from './screens/Signin'
+import SignIn from './screens/SignIn'
 import SignUp from './screens/SignUp'
 
 const Stack = createNativeStackNavigator()
@@ -36,7 +36,7 @@ export default function App() {
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='Details' component={Details} />
         <Stack.Screen name='SignUp' component={SignUp} />
-        <Stack.Screen name='SignIn' component={Signin} />
+        <Stack.Screen name='SignIn' component={SignIn} />
       </Stack.Navigator>
     </NavigationContainer>
   )
