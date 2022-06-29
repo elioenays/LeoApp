@@ -22,6 +22,10 @@ export const login = async (email, password) => {
   }
 }
 
-const signOut = async () => {
-  await AsyncStorage.multiRemove(['@LeoApp:token', '@LeoApp:user'])
+const logout = async () => {
+  try {
+    await AsyncStorage.multiRemove(['@LeoApp:token', '@LeoApp:user'])
+  } catch (error) {
+    console.log('error inside signin method', error.message)
+  }
 }

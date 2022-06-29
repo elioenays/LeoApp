@@ -35,12 +35,16 @@ const Details = ({ route, navigation }) => {
   console.log(data)
 
   const handleParticipation = async () => {
-    await api.post('participation', {
-      userId: 'b2787b31-abd6-4fe9-b624-3dc3a1006905',
-      projectId: '425e7e9e-7bc6-486b-a056-7473e4aa555a',
-    })
+    try {
+      await api.post('participation', {
+        userId: '16e92e65-49b4-4993-8ee3-54a4c948f811',
+        projectId: '425e7e9e-7bc6-486b-a056-7473e4aa555a',
+      })
 
-    setModalVisible(true)
+      setModalVisible(true)
+    } catch (error) {
+      console.log('error at participation module', error.message)
+    }
   }
 
   return (
