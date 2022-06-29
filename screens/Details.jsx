@@ -78,7 +78,7 @@ const Details = ({ route, navigation }) => {
             }}
           >
             <Text>
-              Parabens! Você está participando do projeto{' '}
+              Parabens! Você está participando do projeto
               <strong>{data.name}</strong>
             </Text>
             <RectButton
